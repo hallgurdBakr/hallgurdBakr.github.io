@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>‌Hallgurd Bakr - My personal website</title>
+</head>
+
+<body>
+  <script>
+    function setLanguage(lang) {
+      localStorage.setItem("preferredLanguage", lang);
+      // redirect from root to language directory
+      window.location.replace(lang);
+    }
+    // Check preferredLanguage or browser language and update local storage
+    function updateLanguage() {
+      const preferredLanguage = localStorage.getItem("preferredLanguage");
+      const browserLanguage = navigator.language || navigator.userLanguage;
+      if (preferredLanguage) {
+        if (preferredLanguage === "ckb") {
+          setLanguage("ckb");
+        } else {
+          setLanguage("en");
+        }
+      } else {
+        if (browserLanguage.startsWith("ckb") || browserLanguage.startsWith("ku")) {
+          setLanguage("ckb");
+        } else {
+          setLanguage("en");
+        }
+      }
+    }
+    // On page load, check browser language and update local storage
+    updateLanguage();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+{% from "macros/subHeading.njk" import subHeading %}
+
+<section class="w-full overflow-hidden rounded-2xl border border-zinc-200 p-4 dark:border-zinc-900 md:p-6">
+  <h1 class="mb-7 text-center text-2xl font-medium">{{ languages[page.lang].tech.heading }}</h1>
+
+  <div
+    class="flex w-full flex-col items-center justify-center -space-y-20 md:flex-row md:-space-y-0 lg:gap-x-10"
+  >
+    <div class="flex flex-col items-center gap-3 md:-me-20">
+      {{ subHeading(languages[page.lang].tech.frontend, "hidden md:block") }}
+      <div
+        class="relative z-10 flex h-64 w-64 items-center justify-center overflow-hidden rounded-full bg-zinc-200/20 border border-zinc-200 dark:bg-zinc-900/20 dark:border-zinc-900"
+      >
+        <div class="icons icons-one absolute flex h-full w-full items-center justify-start">
+          <div class="[--i:1]">
+            <img width="24" height="24" src="../../assets/icons/html5.svg" alt="HTML5 icon" title="HTML5" />
+          </div>
+          <div class="[--i:2]">
+            <img width="24" height="24" src="../../assets/icons/css3.svg" alt="CSS3 icon" title="CSS3" />
+          </div>
+          <div class="[--i:3] md:[--i:6]">
+            <img
+              width="24"
+              height="24"
+              src="../../assets/icons/bootstrap.svg"
+              alt="Bootstrap icon"
+              title="Bootstrap"
+            />
+          </div>
+          <div class="[--i:4] md:[--i:7]">
+            <img
+              width="24"
+              height="24"
+              src="../../assets/icons/tailwindcss.svg"
+              alt="Tailwind CSS icon"
+              title="Tailwind CSS"
+            />
+          </div>
+          <div class="[--i:5] md:[--i:3]">
+            <img width="24" height="24" src="../../assets/icons/react.svg" alt="React icon" title="React" />
+          </div>
+          <div class="[--i:6] md:[--i:4]">
+            <img
+              width="24"
+              height="24"
+              src="../../assets/icons/javascript.svg"
+              alt="JavaScript icon"
+              title="JavaScript"
+            />
+          </div>
+          <div class="[--i:7] md:[--i:5]">
+            <img
+              width="24"
+              height="24"
+              src="../../assets/icons/eleventy.svg"
+              alt="Eleventy icon"
+              title="Eleventy"
+            />
+          </div>
+          <div class="[--i:8]">
+            <img width="24" height="24" src="../../assets/icons/bulma.svg" alt="Bulma icon" title="Bulma" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center gap-3">
+      {{ subHeading(languages[page.lang].tech.backend, "hidden md:block") }}
+      <div
+        class="relative flex h-64 w-64 items-center justify-center overflow-hidden rounded-full border border-zinc-200 dark:border-zinc-900"
+      >
+        <div class="icons flex flex-row items-center justify-center gap-5 md:flex-col">
+          <div>
+            <img width="24" height="24" src="../../assets/icons/php.svg" alt="PHP icon" title="PHP" />
+          </div>
+          <div>
+            <img
+              width="24"
+              height="24"
+              src="../../assets/icons/wordpress.svg"
+              alt="WordPress icon"
+              title="WordPress"
+            />
+          </div>
+          <div>
+            <img width="24" height="24" src="../../assets/icons/mysql.svg" alt="MySQL icon" title="MySQL" />
+          </div>
+          <div>
+            <img
+              width="24"
+              height="24"
+              src="../../assets/icons/decapcms.svg"
+              alt="Decap CMS icon"
+              title="Decap cms"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center gap-3 md:-ms-20">
+      {{ subHeading(languages[page.lang].tech.others, "hidden md:block") }}
+      <div
+        class="relative flex h-64 w-64 items-center justify-center overflow-hidden rounded-full bg-zinc-200/20 border border-zinc-200 dark:bg-zinc-900/20 dark:border-zinc-900"
+      >
+        <div class="icons icons-three absolute flex h-full w-full items-center justify-start">
+          <div class="[--i:1]">
+            <img width="24" height="24" src="../../assets/icons/git.svg" alt="Git icon" title="Git" />
+          </div>
+          <div class="[--i:2] md:[--i:8]">
+            <img
+              width="24"
+              height="24"
+              src="../../assets/icons/github.svg"
+              alt="GitHub icon"
+              title="GitHub"
+            />
+          </div>
+          <div class="[--i:3] md:[--i:7]">
+            <img
+              width="24"
+              height="24"
+              src="../../assets/icons/netlify.svg"
+              alt="Netlify icon"
+              title="Netlify"
+            />
+          </div>
+          <div class="[--i:4] md:[--i:2]">
+            <img width="24" height="24" src="../../assets/icons/linux.svg" alt="Linux icon" title="Linux" />
+          </div>
+          <div class="[--i:5] md:[--i:3]">
+            <img
+              width="24"
+              height="24"
+              src="../../assets/icons/visualstudiocode.svg"
+              alt="Visual Studio Code icon"
+              title="Visual Studio Code"
+            />
+          </div>
+          <div class="[--i:6] md:[--i:4]">
+            <img width="24" height="24" src="../../assets/icons/figma.svg" alt="Figma icon" title="Figma" />
+          </div>
+          <div class="[--i:7] md:[--i:5]">
+            <img
+              width="24"
+              height="24"
+              src="../../assets/icons/inkscape.svg"
+              alt="Inkscape icon"
+              title="Inkscape"
+            />
+          </div>
+          <div class="[--i:8] md:[--i:6]">
+            <img width="24" height="24" src="../../assets/icons/gimp.svg" alt="GIMP icon" title="GIMP" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

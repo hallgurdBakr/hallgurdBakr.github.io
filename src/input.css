@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animation-delay-0 {
+    animation-delay: 0s;
+  }
+  .animation-delay-5 {
+    animation-delay: 5s;
+  }
+}
+
+@layer base {
+  :lang(ckb) {
+    @apply font-kurdish;
+  }
+  :lang(en) {
+    @apply font-english;
+  }
+}
+
+[aria-current="page"] {
+  @apply text-zinc-800;
+}
+html.dark [aria-current="page"] {
+  @apply text-zinc-100;
+}
+
+/*------for technologies section ------*/
+div.icons div {
+  @apply rounded-full bg-zinc-900 p-2;
+}
+
+div.icons div img {
+  @apply h-6 w-6;
+  -webkit-transform: rotate(calc(-360deg / 8 * var(--i)));
+  -o-transform: rotate(calc(-360deg / 8 * var(--i)));
+  -moz-transform: rotate(calc(-360deg / 8 * var(--i)));
+  transform: rotate(calc(-360deg / 8 * var(--i)));
+}
+div.icons-one div,
+div.icons-three div {
+  @apply absolute left-5;
+  -webkit-transform: rotate(calc(360deg / 8 * var(--i)));
+  -o-transform: rotate(calc(360deg / 8 * var(--i)));
+  -moz-transform: rotate(calc(360deg / 8 * var(--i)));
+  transform: rotate(calc(360deg / 8 * var(--i)));
+  transform-origin: 108px;
+  transition: 1s;
+}

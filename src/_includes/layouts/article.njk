@@ -1,0 +1,71 @@
+---
+layout: "layouts/base.njk"
+---
+
+{# every single one of my blog post use this layout below, because in blog.json file -> "layout":
+"layouts/article.njk" #}
+
+<article dir="rtl" class="mx-auto w-full max-w-4xl overflow-hidden">
+  <section class="flex flex-col justify-between gap-1.5 md:flex-row md:gap-6">
+    <div class="">
+      <figure class="overflow-hidden">
+        <img src="{{ image }}" alt="{{ imageAlt }}" class="rounded-xl" />
+      </figure>
+    </div>
+
+    <div class="flex flex-col justify-between rounded-xl p-2 md:min-w-[14rem] md:bg-zinc-50 md:p-6 md:dark:bg-zinc-900">
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <h3 class="hidden text-zinc-500 dark:text-zinc-400 md:block">تاگەکان</h3>
+        <div class="flex flex-wrap justify-center gap-3">
+          {% for topic in topics %}
+          <span class="rounded-md bg-green-100 px-2 py-1 text-xs text-green-700 dark:bg-green-950 dark:text-green-100">
+            {{ topic }}
+          </span>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="hidden items-center gap-3 md:flex md:flex-col">
+        <h3 class="text-zinc-500 dark:text-zinc-400">بەشی بکە</h3>
+        <div class="flex items-center gap-5" id="shareContainer">{% include "partials/share.njk" %}</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-6">
+    <div class="mb-3">
+      <h1 class="mb-3 text-2xl md:text-3xl font-medium">{{ title }}</h1>
+      <div class="flex flex-wrap items-center text-xs md:text-sm text-zinc-500 md:gap-1.5">
+        <p>
+          بڵاوکراوەتەوە لە <time datetime="{{ date | postDate }}">{{ date | postDate }}</time>
+        </p>
+
+        {% if updated %}
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+          </svg>
+        </span>
+        <p>
+          نوێکراوەتەوە لە <time datetime="{{ updated | postDate }}">{{ updated | postDate }}</time>
+        </p>
+        {% endif %}
+      </div>
+    </div>
+
+    <div
+      class="prose prose-zinc max-w-none dark:prose-invert md:prose-lg lg:prose-xl prose-a:text-green-500 prose-a:no-underline hover:prose-a:underline prose-pre:[direction:ltr] prose-img:rounded-xl">
+      {{ content | safe }}
+    </div>
+
+    <div class="my-8 flex">
+      <div
+        class="flex flex-wrap items-center justify-center gap-5 rounded-b-xl rounded-tl-xl border border-zinc-100 bg-zinc-50 p-4 dark:border-zinc-800 dark:bg-zinc-900 md:p-6">
+        <p class="text-center text-sm text-zinc-500 dark:text-zinc-400 md:text-base">
+          ئەگەر ئەم بابەتە بەسودبوو بۆت بیناسێنە بە هاوڕێیانت
+        </p>
+        <div class="flex items-center gap-6" id="shareContainer">{% include "partials/share.njk" %}</div>
+      </div>
+    </div>
+  </section>
+</article>

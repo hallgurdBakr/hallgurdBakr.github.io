@@ -1,0 +1,71 @@
+{% from "macros/subHeading.njk" import subHeading %}
+
+<section class="overflow-hidden rounded-2xl border border-zinc-200 p-4 dark:border-zinc-900 md:p-6">
+  <h1 class="mb-7 text-2xl font-medium">
+    {{ languages[page.lang].exp.heading }}
+  </h1>
+
+  <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:gap-24">
+    <div>
+      {{ subHeading(languages[page.lang].exp.work.heading) }}
+      <div class="mt-3 min-h-[232px] space-y-2 rounded-xl bg-zinc-50 p-2 dark:bg-zinc-900/20 md:p-4">
+        <h1 class="text-lg font-medium md:text-xl">
+          {{ languages[page.lang].exp.work.current.position }}
+        </h1>
+        <h2 class="text-base font-normal">
+          {{ languages[page.lang].exp.work.current.workplace }}
+          |
+          {{ languages[page.lang].exp.work.current.startDate }}
+          -
+          {{ languages[page.lang].exp.work.current.endDate }}
+        </h2>
+        <ul
+          class="list-disc space-y-3 ps-5 text-sm font-light text-zinc-600 marker:text-zinc-600 dark:text-zinc-400 dark:marker:text-zinc-400"
+        >
+          {% for item in languages[page.lang].exp.work.current.details %}
+          <li>
+            {{ item }}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      {{ subHeading(languages[page.lang].exp.education.heading) }}
+      <div class="mt-3 min-h-[232px] space-y-2 rounded-xl bg-zinc-50 p-2 dark:bg-zinc-900/20 md:p-4">
+        <h1 class="text-lg font-medium md:text-xl">
+          {{ languages[page.lang].exp.education.old.title }}
+        </h1>
+        <h2 class="text-base font-normal">
+          {{ languages[page.lang].exp.education.old.university }}
+          |
+          {{ languages[page.lang].exp.education.old.startDate }}
+          -
+          {{ languages[page.lang].exp.education.old.endDate }}
+        </h2>
+        <ul
+          class="list-disc space-y-3 ps-5 text-sm font-light text-zinc-600 marker:text-zinc-600 dark:text-zinc-400 dark:marker:text-zinc-400"
+        >
+          {% for item in languages[page.lang].exp.education.old.details %}
+          <li>
+            {{ item }}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="mt-3 space-y-2 rounded-xl bg-zinc-50 p-2 dark:bg-zinc-900/20 md:p-4">
+        <h1 class="text-lg font-medium md:text-xl‍">
+          {{ languages[page.lang].exp.education.current.title }}
+        </h1>
+        <h2 class="text-base font-normal">
+          {{ languages[page.lang].exp.education.current.university }}
+          |
+          {{ languages[page.lang].exp.education.current.startDate }}
+          -
+          {{ languages[page.lang].exp.education.current.endDate }}
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>

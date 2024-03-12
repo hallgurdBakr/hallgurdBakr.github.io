@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="{{ page.lang }}" dir="{{ languages[page.lang].dir }}"
+  class=" selection:bg-green-100 scroll-smooth selection:text-zinc-800">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ description or metadata[page.lang].description }}" />
+  <meta name="author" content="{{ metadata[page.lang].author }}" />
+  <title>{% if page.lang === "ckb" %}&#x202b;{% endif %}{{ title }}</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  {# Helps prevent duplicate content issues #}
+  <link rel="canonical" href="{{ metadata.url }}{{ page.url }}" />
+  {# Favicon #}
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="/assets/images/favicon/site.webmanifest" />
+  <script>
+    // dark mode
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  </script>
+</head>
+
+<body class="flex min-h-screen flex-col justify-between gap-10 text-zinc-800 dark:bg-zinc-950 dark:text-zinc-100">
+  {% include "partials/header.njk" %}
+
+  <main class="container mx-auto flex flex-col justify-between gap-10">
+    {{ content | safe }}
+  </main>
+
+  {% include "partials/footer.njk" %}
+
+  <script src="/assets/js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+---
+layout: "layouts/base.njk"
+title: "پەیوەندیم پێوە بکە"
+slugOverride: "contact"
+description: "ئەگەر پڕۆژەیەکت لە مێشکدایە یاخود دەتەوێت کارێکت بۆبکەم یان بە سادەیی پرسیارت هەیە ئەوا من ئامادەم بۆ گوێگرتن، لە ڕێگەی پەڕەی پەیوەندیکردن بەبێ ماندووبوون پەیوەندیم پێوەبکە، یان دەتوانی لە تۆڕە کۆمەڵایەتیەکانەوە بمدۆزیتەوە."
+---
+
+{% import "macros/forms.njk" as forms %} {% from "macros/social.njk" import social %}
+
+<div class="flex flex-col items-center justify-center gap-10 overflow-hidden lg:flex-row lg:gap-20">
+  <section class="w-full max-w-lg rounded-2xl border border-zinc-200 p-4 dark:border-zinc-900 lg:p-6">
+    <div class="text-center">
+      <h2 class="mb-2 text-2xl font-medium">پرسیار یان بیرۆکەیەکی سەرنجڕاکێشت هەیە؟</h2>
+      <p class="font-normal text-zinc-500">
+        خۆشحاڵم کە پرسیارەکانتان ببیستم و پێکەوە لە بیرۆکە سەرنجڕاکێشەکان بکۆڵینەوە، یان بۆ هەر شتێکی تر کە لە
+        مێشکت دایە. فۆڕمی خوارەوە بەکاربێنە بۆ ناردنی پەیامێک بۆم و چاوەڕێی وەڵامی خێرابە.
+      </p>
+    </div>
+
+    <div class="mt-8">
+      <form class="space-y-6" action="https://formspree.io/f/mwkgbklq" method="POST" name="contactForm">
+        <div>
+          {{ forms.label("name", "ناو") }}
+          {{ forms.field(type="text", "name") }}
+        </div>
+        <div>
+          {{ forms.label("email", "پۆستی ئەلیکترۆنی (Email)") }}
+          {{ forms.field(type="email", "email") }}
+        </div>
+
+        <div>
+          {{ forms.label("message", "پەیام") }}
+          {{ forms.textarea("message") }}
+        </div>
+
+        <div>
+          {{ forms.submit("ناردن") }}
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <div class="flex items-center gap-2 lg:flex-col">
+    <span
+      class="w-28 border-b border-dashed border-zinc-200 dark:border-zinc-900 lg:h-28 lg:w-0 lg:border-l"
+    ></span>
+    <span>یان</span>
+    <span
+      class="w-28 border-b border-dashed border-zinc-200 dark:border-zinc-900 lg:h-28 lg:w-0 lg:border-l"
+    ></span>
+  </div>
+
+  <section
+    class="flex flex-col items-center gap-4 rounded-2xl border border-zinc-200 p-4 dark:border-zinc-900 md:p-6"
+  >
+    <h1>لە پەیوەندیدا بمێنەوە لەگەڵم لەسەر:</h1>
+    <div class="flex items-center gap-6">
+      {{ social(20, 20) }}
+    </div>
+  </section>
+</div>

@@ -1,0 +1,20 @@
+{% macro postCard(item, dir) %}
+<article dir="{{ dir }}"
+  class="w-full rounded-2xl border border-zinc-200 p-3 hover:border-zinc-300 dark:border-zinc-900 dark:hover:border-zinc-700">
+  <div class="mb-3">
+    <a href="{{ item.url }}">
+      {% EleventyImage item.data.image, item.data.imageAlt, "", "w-full rounded-xl", [700] %}
+    </a>
+    <div class="mt-3 flex gap-2 overflow-hidden">
+      {% for topic in item.data.topics %}
+      <span class="rounded-md bg-green-100 px-2 py-1 text-xs text-green-700 dark:bg-green-950 dark:text-green-100">
+        {{ topic }}
+      </span>
+      {% endfor %}
+    </div>
+  </div>
+  <a href="{{ item.url }}">
+    <h1 class="text-lg font-medium">{{ item.data.title }}</h1>
+  </a>
+</article>
+{% endmacro %}

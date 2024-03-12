@@ -1,0 +1,59 @@
+<section class="w-full overflow-hidden rounded-2xl border border-zinc-200 p-4 dark:border-zinc-900 md:p-6">
+  <div class="mb-7 text-start">
+    <h1 class="mb-1 text-2xl font-medium">{{ languages[page.lang].cert.heading }}</h1>
+    <p class="text-sm font-normal text-zinc-500 sm:hidden">{{ languages[page.lang].cert.click }}</p>
+  </div>
+
+  <div class="flex snap-x snap-mandatory gap-x-4 overflow-x-auto pb-4 md:gap-x-10">
+    {% for item in languages[page.lang].cert.items %}
+
+    <div
+      class="min-w-[17rem] snap-center snap-always rounded-xl bg-zinc-50 dark:bg-zinc-900/20 sm:min-w-[29.5rem]"
+    >
+      <div class="relative flex items-start">
+        <div class="group peer relative flex rounded-xl bg-zinc-900 sm:shrink-0">
+          <img class="h-auto w-full rounded-xl sm:w-52" src="{{ item.img }}" alt="{{ item.imageAlt }}" />
+          <div
+            class="invisible absolute left-0 top-0 flex h-full w-full items-end justify-end rounded-xl bg-zinc-50/30 p-3 opacity-0 backdrop-blur-lg transition-all delay-75 duration-300 ease-in-out group-hover:visible group-hover:opacity-100 dark:bg-zinc-950/80 sm:items-center sm:justify-center"
+          >
+            <a href="{{ item.verifyURL }}" target="_blank" class="flex items-center justify-center gap-x-1">
+              <span class="text-sm font-medium text-zinc-800 dark:text-zinc-100">{{
+                languages[page.lang].cert.verify
+              }}</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                {% if page.lang === "ckb" %}
+                <path
+                  fill-rule="evenodd"
+                  d="M2 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1H3.707l10.147 10.146a.5.5 0 0 1-.708.708L3 3.707V8.5a.5.5 0 0 1-1 0v-6z"
+                />
+                {% else %}
+                <path
+                  fill-rule="evenodd"
+                  d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"
+                />
+                {% endif %}
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="invisible absolute left-0 top-0 overflow-hidden p-3 opacity-0 transition-all delay-75 duration-300 ease-in-out peer-hover:visible peer-hover:opacity-100 sm:visible sm:static sm:opacity-100"
+        >
+          <h1 class="text-lg font-medium">{{ item.title }}</h1>
+          <p class="mt-1 text-sm font-light text-zinc-600 dark:text-zinc-400">
+            {{ item.detail }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</section>

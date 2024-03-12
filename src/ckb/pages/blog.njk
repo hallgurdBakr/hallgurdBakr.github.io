@@ -1,0 +1,40 @@
+---
+layout: "layouts/base.njk"
+title: "بابەتەکانی بڵۆگەکەم"
+slugOverride: "blog"
+description: "تێڕوانین و فێرکاری و باس و خواسی نوێترین تەکنەلۆژیاکان لە بابەتەکانی بڵۆگەکمەوە بخوێنەوە، کە ئامانجم ئەوەیە ئاشنات بکەم بە تەکنەلۆژیا سەردەمییەکان تاوەکو کارەکەت زیاتر پێشبخات و بتوانیت لەگەڵ گؤڕانکارییەکانی سەردەمدا خۆت بگونجێنیت"
+---
+
+{% from 'macros/postCard.njk' import postCard %}
+
+<div class="flex flex-col justify-between gap-4 md:flex-row">
+  <div class="max-w-4xl">
+    <h1 class="text-2xl font-medium">بەخێربێیت بۆ بڵۆگەکەم</h1>
+    <p class="mt-2 text-base text-zinc-500 text-justify">
+      با پێکەوە فێرببین و پێشبکەوین، هەموومان لە گەشتێکی درێژی فێربوونداین و لە بیرمانبێت کە زانست بێکۆتایە!
+      ئەم بابەتانە لێرە دەینووسم ‌لە چوارچێوەی تەکنەلۆژیایە کە حەز و خولیای ڕۆژانەمە و هەوڵدەدەم بابەتەکانم
+      بەهایەکیش بدەن بەکارەکانی تر. هەموو بابەتەکانم لە ژێر مۆڵەتی
+      <a
+        href="https://creativecommons.org/licenses/by/4.0/"
+        title="کرتە بکە بۆ زانیاری زیاتر دەرەبارەی ئەم مۆڵەتە"
+        target="_blank"
+        class="text-green-500 underline-offset-4 hover:underline"
+        >CC BY 4.0</a
+      >
+      بڵاوی دەکەمەوە بۆیە ئازادانە دەتوانیت سودی لێوەربگریت و بڵاوی بکەیتەوە، تەنانەت دەستکاریش!
+    </p>
+  </div>
+</div>
+<section>
+  <div class="my-5">
+    <h1 class="text-xl font-medium">هەموو بابەتەکان</h1>
+  </div>
+
+  <div
+    class="text-3xl:grid-cols-4 grid grid-cols-1 place-content-between justify-items-stretch gap-12 sm:grid-cols-2 xl:grid-cols-3"
+  >
+    {% asyncEach item in collections.blog | reverse %}
+    {{ postCard(item, "rtl") }}
+    {% endeach %}
+  </div>
+</section>

@@ -1,0 +1,62 @@
+---
+layout: "layouts/base.njk"
+title: "Contact me"
+slugOverride: "contact"
+description: "Whether you have a question, a collaboration opportunity, or just want to say hello, I'm always eager to hear from you. Reach out through the contact form or connect with me on social media. I'm here to help bring your ideas to life, so don't hesitate to get in touch. Let's turn your vision into reality together."
+---
+
+{% import "macros/forms.njk" as forms %} {% from "macros/social.njk" import social %}
+
+<div class="flex flex-col items-center justify-center gap-10 overflow-hidden lg:flex-row lg:gap-20">
+  <section class="w-full max-w-lg rounded-2xl border border-zinc-200 p-4 dark:border-zinc-900 lg:p-6">
+    <div class="text-center">
+      <h2 class="mb-2 text-2xl font-medium">Have questions or exciting ideas?</h2>
+      <p class="font-normal text-zinc-500">
+        I'm excited to hear your questions and explore exciting ideas together, or anything else that's on
+        your mind. Use the form below to send me a message and expect a quick response.
+      </p>
+    </div>
+
+    <div class="mt-8">
+      <form class="space-y-6" action="https://formspree.io/f/mwkgbklq" method="POST" name="contactForm">
+        <div>
+          {{ forms.label("name", "Name") }}
+          {{ forms.field(type="text", "name") }}
+        </div>
+
+        <div>
+          {{ forms.label("email", "Email") }}
+          {{ forms.field(type="email", "email") }}
+        </div>
+
+        <div>
+          {{ forms.label("message", "Message") }}
+          {{ forms.textarea("message") }}
+        </div>
+
+        <div>
+          {{ forms.submit("Send") }}
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <div class="flex items-center gap-2 lg:flex-col">
+    <span
+      class="w-28 border-b border-dashed border-zinc-200 dark:border-zinc-900 lg:h-28 lg:w-0 lg:border-l"
+    ></span>
+    <span>OR</span>
+    <span
+      class="w-28 border-b border-dashed border-zinc-200 dark:border-zinc-900 lg:h-28 lg:w-0 lg:border-l"
+    ></span>
+  </div>
+
+  <section
+    class="flex flex-col items-center gap-4 rounded-2xl border border-zinc-200 p-4 dark:border-zinc-900 md:p-6"
+  >
+    <h1>Keep in touch by following me on:</h1>
+    <div class="flex items-center gap-6">
+      {{ social(20, 20) }}
+    </div>
+  </section>
+</div>

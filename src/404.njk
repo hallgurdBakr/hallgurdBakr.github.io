@@ -1,0 +1,89 @@
+---
+permalink: "404.html"
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page not found</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="/assets/images/favicon/site.webmanifest" />
+
+  <script>
+    // dark mode
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  </script>
+</head>
+
+<body class="dark:bg-zinc-950 dark:text-zinc-100">
+  <main class="min-h-screen flex flex-col justify-center items-center p-4">
+    <div>
+      <div class="flex flex-col items-center gap-4">
+        <h1 class="border-b-2 border-zinc-800 pb-4 text-6xl font-bold dark:border-zinc-100">
+          404
+        </h1>
+        <div class="text-center">
+          <h2 id="heading" class="mb-3 text-2xl font-bold">Page not found</h2>
+          <p id="paragraph" class="text-zinc-500">Sorry, the page you are looking for doesn't exist or has been moved.
+          </p>
+        </div>
+      </div>
+      <div class="mt-10 flex justify-center">
+        <a href="/" id="homeBtn"
+          class="hover:text-green-500 border border-zinc-800 dark:border-zinc-200 rounded-xl p-3">Go to Homepage</a>
+      </div>
+    </div>
+  </main>
+
+
+  <script>
+    // Function to load content based on language
+    function loadContent(language) {
+      const heading = document.getElementById('heading');
+      const paragraph = document.getElementById('paragraph');
+      const homeBtn = document.getElementById('homeBtn');
+      if (language === 'ckb' || language === 'ku') {
+        document.documentElement.lang = "ckb";
+        document.title = "ئەم پەڕەیە نەدۆزرایەوە";
+        heading.innerText = document.title;
+        paragraph.innerText = "ببورە، ئەو پەڕەیەی بەدوایدا دەگەڕێیت بوونی نییە یان گواستراوەتەوە";
+        homeBtn.innerText = "بڕۆ بۆ پەڕەی سەرەتا";
+      }
+    }
+    // Check preferredLanguage or browser language and update local storage
+    function updateLanguage() {
+      const preferredLanguage = localStorage.getItem("preferredLanguage");
+      const browserLanguage = navigator.language || navigator.userLanguage;
+      if (preferredLanguage) {
+        loadContent(preferredLanguage);
+      }
+      else {
+        loadContent(browserLanguage);
+      }
+    }
+    // On page load, check browser language and update local storage
+    updateLanguage();
+  </script>
+</body>
+
+</html>

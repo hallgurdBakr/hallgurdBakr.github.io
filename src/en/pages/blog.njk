@@ -1,0 +1,47 @@
+---
+layout: "layouts/base.njk"
+title: "My blog posts"
+slugOverride: "blog"
+description: "Explore the latest in tech through my blog's straightforward explanations. Uncover practical advice and step-by-step tutorials designed to keep you ahead in the tech world. Plus, discover how I can guide you in configuring the most advanced technologies to elevate your business to new heights."
+---
+
+{% from 'macros/postCard.njk' import postCard %}
+
+<div class="flex flex-col items-start justify-between gap-4 md:flex-row">
+  <div class="max-w-2xl">
+    <h1 class="text-2xl font-medium">Welcome to my blog</h1>
+    <p class="mt-2 text-base text-zinc-500 text-justify">
+      Let's learn and improve together, because we are all on a continuous journey of learning, and the realm
+      of science knows no bounds! I write these articles in the field of technology, which is my daily
+      passion, with the aim of providing value to others through my work. I publish all my articles under the
+      <a
+        href="https://creativecommons.org/licenses/by/4.0/"
+        title="Click to learn more about this license."
+        target="_blank"
+        class="text-green-500 underline-offset-4 hover:underline"
+        >CC BY 4.0</a
+      >
+      license, so please feel free to use, publish, or even edit them!
+    </p>
+  </div>
+
+  <div
+    class="max-w-xs rounded-xl bg-yellow-100 p-3 text-yellow-950 dark:bg-yellow-600/20 dark:text-yellow-100 md:p-4"
+  >
+    <p>Please note that all the articles on this site are written in the Central Kurdish language.</p>
+  </div>
+</div>
+
+<section>
+  <div class="my-5 flex items-center space-x-4">
+    <h1 class="text-xl font-medium">All Articles</h1>
+  </div>
+
+  <div
+    class="text-3xl:grid-cols-4 grid grid-cols-1 place-content-between justify-items-stretch gap-12 sm:grid-cols-2 xl:grid-cols-3"
+  >
+    {% asyncEach item in collections.blog | reverse %}
+    {{ postCard(item, "rtl") }}
+    {% endeach %}
+  </div>
+</section>
