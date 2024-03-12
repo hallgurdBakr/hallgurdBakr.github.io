@@ -1,5 +1,5 @@
 ---
-title: "کلیکی گەشتکردن بە ماڵپەڕەکان"
+title: "کلیلی گەشتکردن بە ماڵپەڕەکان"
 postSlug: "The Key to web Navigation"
 author: Hallgurd Bakr
 date: 2024-03-12
