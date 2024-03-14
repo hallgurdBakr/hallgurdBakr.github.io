@@ -28,7 +28,8 @@ function imageShortcode(src, alt, sizes, cls, widths) {
 module.exports = function (eleventyConfig) {
   // Copy your file and folder and paste them in _site folder
   eleventyConfig.addPassthroughCopy("./src/assets");
-  eleventyConfig.addPassthroughCopy("./src/googlee180feb5fee6d7e9.html");
+  eleventyConfig.addPassthroughCopy("./googlee180feb5fee6d7e9.html");
+  eleventyConfig.addPassthroughCopy("./sitemap.xml");
   eleventyConfig.addWatchTarget("./src/input.css");
   eleventyConfig.addWatchTarget("./tailwind.config.js");
   eleventyConfig.addShortcode("currentYear", () => `${new Date().getFullYear()}`);
