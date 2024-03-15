@@ -1,6 +1,6 @@
 {% from "macros/subHeading.njk" import subHeading %}
 
-<section class="w-full overflow-hidden rounded-2xl border border-zinc-200 p-4 dark:border-zinc-900 md:p-6">
+<section class="w-full overflow-hidden rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800 md:p-6">
   <h1 class="mb-7 text-center text-2xl font-medium">{{ languages[page.lang].tech.heading }}</h1>
 
   <div
@@ -9,7 +9,7 @@
     <div class="flex flex-col items-center gap-3 md:-me-20">
       {{ subHeading(languages[page.lang].tech.frontend, "hidden md:block") }}
       <div
-        class="relative z-10 flex h-64 w-64 items-center justify-center overflow-hidden rounded-full bg-zinc-200/20 border border-zinc-200 dark:bg-zinc-900/20 dark:border-zinc-900"
+        class="relative z-10 flex h-64 w-64 items-center justify-center overflow-hidden rounded-full bg-zinc-200/20 border border-zinc-200 dark:bg-zinc-900/50 dark:border-zinc-900"
       >
         <div class="icons icons-one absolute flex h-full w-full items-center justify-start">
           <div class="[--i:1]">
@@ -101,7 +101,7 @@
     <div class="flex flex-col items-center gap-3 md:-ms-20">
       {{ subHeading(languages[page.lang].tech.others, "hidden md:block") }}
       <div
-        class="relative flex h-64 w-64 items-center justify-center overflow-hidden rounded-full bg-zinc-200/20 border border-zinc-200 dark:bg-zinc-900/20 dark:border-zinc-900"
+        class="relative flex h-64 w-64 items-center justify-center overflow-hidden rounded-full bg-zinc-200/20 border border-zinc-200 dark:bg-zinc-900/50 dark:border-zinc-900"
       >
         <div class="icons icons-three absolute flex h-full w-full items-center justify-start">
           <div class="[--i:1]">

@@ -1,6 +1,6 @@
 {% from "macros/subHeading.njk" import subHeading %}
 
-<section class="overflow-hidden rounded-2xl border border-zinc-200 p-4 dark:border-zinc-900 md:p-6">
+<section class="overflow-hidden rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800 md:p-6">
   <h1 class="mb-7 text-2xl font-medium">
     {{ languages[page.lang].exp.heading }}
   </h1>
@@ -8,7 +8,7 @@
   <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:gap-24">
     <div>
       {{ subHeading(languages[page.lang].exp.work.heading) }}
-      <div class="mt-3 min-h-[232px] space-y-2 rounded-xl bg-zinc-50 p-2 dark:bg-zinc-900/20 md:p-4">
+      <div class="mt-3 min-h-[232px] space-y-2 rounded-xl bg-zinc-50 p-2 dark:bg-zinc-900/50 md:p-4">
         <h1 class="text-lg font-medium md:text-xl">
           {{ languages[page.lang].exp.work.current.position }}
         </h1>
@@ -33,7 +33,7 @@
 
     <div>
       {{ subHeading(languages[page.lang].exp.education.heading) }}
-      <div class="mt-3 min-h-[232px] space-y-2 rounded-xl bg-zinc-50 p-2 dark:bg-zinc-900/20 md:p-4">
+      <div class="mt-3 min-h-[232px] space-y-2 rounded-xl bg-zinc-50 p-2 dark:bg-zinc-900/50 md:p-4">
         <h1 class="text-lg font-medium md:text-xl">
           {{ languages[page.lang].exp.education.old.title }}
         </h1>
@@ -54,7 +54,7 @@
           {% endfor %}
         </ul>
       </div>
-      <div class="mt-3 space-y-2 rounded-xl bg-zinc-50 p-2 dark:bg-zinc-900/20 md:p-4">
+      <div class="mt-3 space-y-2 rounded-xl bg-zinc-50 p-2 dark:bg-zinc-900/50 md:p-4">
         <h1 class="text-lg font-medium md:text-xl‍">
           {{ languages[page.lang].exp.education.current.title }}
         </h1>

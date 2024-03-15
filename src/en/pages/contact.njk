@@ -8,7 +8,7 @@ description: "Whether you have a question, a collaboration opportunity, or just 
 {% import "macros/forms.njk" as forms %} {% from "macros/social.njk" import social %}
 
 <div class="flex flex-col items-center justify-center gap-10 overflow-hidden lg:flex-row lg:gap-20">
-  <section class="w-full max-w-lg rounded-2xl border border-zinc-200 p-4 dark:border-zinc-900 lg:p-6">
+  <section class="w-full max-w-lg rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800 lg:p-6">
     <div class="text-center">
       <h2 class="mb-2 text-2xl font-medium">Have questions or exciting ideas?</h2>
       <p class="font-normal text-zinc-500">
@@ -43,18 +43,18 @@ description: "Whether you have a question, a collaboration opportunity, or just 
 
   <div class="flex items-center gap-2 lg:flex-col">
     <span
-      class="w-28 border-b border-dashed border-zinc-200 dark:border-zinc-900 lg:h-28 lg:w-0 lg:border-l"
+      class="w-28 border-b border-dashed border-zinc-200 dark:border-zinc-800 lg:h-28 lg:w-0 lg:border-l"
     ></span>
     <span>OR</span>
     <span
-      class="w-28 border-b border-dashed border-zinc-200 dark:border-zinc-900 lg:h-28 lg:w-0 lg:border-l"
+      class="w-28 border-b border-dashed border-zinc-200 dark:border-zinc-800 lg:h-28 lg:w-0 lg:border-l"
     ></span>
   </div>
 
   <section
-    class="flex flex-col items-center gap-4 rounded-2xl border border-zinc-200 p-4 dark:border-zinc-900 md:p-6"
+    class="flex flex-col items-center gap-4 max-w-lg rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800 md:p-6"
   >
-    <h1>Keep in touch by following me on:</h1>
+    <h1 class="text-center">If you're want to stay updated on my latest articles and projects, following me on:</h1>
     <div class="flex items-center gap-6">
       {{ social(20, 20) }}
     </div>
